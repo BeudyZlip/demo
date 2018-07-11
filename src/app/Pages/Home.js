@@ -54,11 +54,17 @@ class Home extends PureComponent {
       userFilieres,
       userDepartements,
     } = this.state
-    if (userApe) {
-      let query = `&ape=${userApe}`
-      if (userSiret) query += `&siret=${userSiret}`
+    const siret = userSiret.trim().replace(/ /ig, '')
+    const hasSiret = (siret && _.size(siret) === 14 && /^\d+$/.test(siret))
+    if (userApe || hasSiret) {
+      let query = ''
+      if (hasSiret) {
+        query += `&siret=${siret}`
+      } else {
+        query += `&ape=${userApe}`
+        if (userDepartements) query += `&departement=${userDepartements}`
+      }
       if (userFilieres) query += `&filiere=${userFilieres}`
-      if (userDepartements) query += `&departement=${userDepartements}`
       fetch(`${this.api}/aides/${this.params}&domaine=4${query}`).then((response) => {
         response.json().then(res => this.setState({ dispositifs: res.dispositifs }))
       })
