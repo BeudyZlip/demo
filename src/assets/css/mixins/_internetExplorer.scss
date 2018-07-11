@@ -1,0 +1,4 @@
+@mixin ie {
+  // >= IE10
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {@content}
+}

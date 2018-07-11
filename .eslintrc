@@ -1,0 +1,45 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "import"
+  ],
+  "rules": {
+    "max-len": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "react/forbid-prop-types": "off",
+    "react/no-unescaped-entities": "off",
+    "class-methods-use-this": "off",
+    "no-script-url": "off",
+    "global-require": "off",
+    "no-restricted-globals": "off",
+    "react/jsx-filename-extension": [1, {
+      "extensions": [".js", ".jsx"]
+    }],
+    "no-return-assign": "off",
+    "semi": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/label-has-for": "off",
+    "func-names": "off",
+    "object-shorthand": "off"
+    # "function-paren-newline": 0,
+    # "comma-dangle": 0,
+    # "jsx-a11y/href-no-hash": "off",
+    # "import/no-named-as-default": "off",
+    # "react/jsx-boolean-value": "off",
+    # "react/sort-comp": "off",
+    # "import/no-named-as-default-member": "off",
+    # "eol-last": 0,
+    # "no-new": 0,
+    # "import/no-extraneous-dependencies": ["error", {"peerDependencies": true}]
+  },
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true
+  }
+}

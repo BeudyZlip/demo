@@ -1,0 +1,29 @@
+@for $i from 0 through 100 {
+  .marginRight#{$i} {
+    margin-right: #{$i}px !important;
+  }
+  .marginLeft#{$i} {
+    margin-left: #{$i}px !important;
+  }
+  .marginBottom#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+  .marginTop#{$i} {
+    margin-top: #{$i}px !important;
+  }
+}
+
+@for $i from 0 through 500 {
+  .width#{$i} {
+    width: #{$i}px !important;
+  }
+  .maxWidth#{$i} {
+    max-width: #{$i}px !important;
+  }
+}
+
+@for $i from 0 through 100 {
+  .width#{$i}pcent {
+    width: #{$i}% !important;
+  }
+}

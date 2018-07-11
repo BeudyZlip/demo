@@ -1,0 +1,205 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  margin: 0;
+}
+
+$color: #D70F4B;
+
+body {
+  font-size: 14px;
+  font-family: Arial, Helvetica, serif;
+  position: relative;
+  background-color: #f5f5f5;
+  color: #333;
+  #root {
+    justify-content: center;
+    align-self: center;
+    display: flex;
+    flex: 1;
+    .body {
+      display: inline-block;
+      max-width: 600px;
+    }
+  }
+  &,
+  * {
+    box-sizing: border-box;
+    letter-spacing: normal;
+    outline: none;
+  }
+}
+.container {
+  position: relative;
+  background: linear-gradient(to bottom, #FFFFFF ,#E8E8E8);
+  border: 1px solid #CCC;
+  padding: 15px;
+  .loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(#FFF, .75);
+    .spinner {
+      position: absolute;
+      top: calc(50% - 25px);
+      left: calc(50% - 25px);
+      animation: spin 1s linear infinite;
+      border: 3px solid #ddd;
+      border-top: 3px solid $color;
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+    }
+  }
+  h1 {
+    margin: 0 0 15px 0;
+    padding: 0 0 5px 0;
+    font-size: 1.2em;
+    border-bottom: 1px solid #CCC;
+    color: $color;
+  }
+  p {
+    margin: 0 0 15px 0;
+  }
+  hr {
+    margin: 0 0 15px 0;
+    padding: 0;
+    height: 0px;
+    border: none;
+    border-bottom: 1px solid #CCC;
+    overflow: hidden;
+    background: transparent;
+  }
+  em {
+    font-size: 0.75em;
+  }
+  label {
+    display: flex;
+    margin-bottom: 15px;
+    span {
+      font-weight: bold;
+      font-size: 0.85em;
+      flex: 0 0 150px;
+      line-height: 25px;
+    }
+    .field {
+      flex: 0 0 calc(100% - 150px);
+      input,
+      select {
+        width: 100%;
+        margin: 0;
+        padding: 0 10px;
+        line-height: 25px;
+        border-radius: 4px;
+        border: 1px solid #CCC;
+        background: #FFF;
+        font-size: 0.85em;
+      }
+      select {
+        height: 25px;
+      }
+      button {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        line-height: 25px;
+        border-radius: 0 4px 4px 0;
+        border: 1px solid #CCC;
+        border-left: none;
+        background: $color;
+        color: #FFF;
+        width: 30px;
+        cursor: pointer;
+      }
+      ul {
+        transition: max-height .2s ease;
+        margin: 0 30px 0 3px;
+        max-height: 0px;
+        overflow: auto;
+        padding: 0;
+        list-style: none;
+        background: #FFF;
+        border: none;
+        li {
+          padding: 3px 10px;
+          cursor: pointer;
+          max-height: 28px;
+          overflow: hidden;
+          line-height: 22px;
+          &:hover {
+            background-color: rgba($color, .2);
+          }
+        }
+      }
+      &.active {
+        ul {
+          max-height: 80px;
+          border: 1px solid #CCC;
+          border-top: none;
+        }
+      }
+    }
+    &.hasButton .field {
+      input,
+      select {
+        border-radius: 4px 0 0 4px;
+        border-right: 0 none;
+        width: calc(100% - 30px);
+      }
+    }
+  }
+  .dispositifs {
+    margin: 15px -15px -15px -15px;
+    background-color: #FFF;
+    border-top: 1px solid #CCC;
+    max-height: 400px;
+    overflow: auto;
+    padding: 15px 15px 10px 15px;
+    h1 {
+      margin-bottom: 10px;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      font-size: 0.85em;
+      list-style: none;
+      li {
+        margin: 0;
+        padding: 5px 0;
+        border-bottom: 1px solid #CCC;
+        list-style: none;
+        cursor: pointer;
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+        &:hover {
+          background-color: rgba($color, .25);
+        }
+        &:last-of-type {
+          border: 0 none;
+        }
+      }
+    }
+  }
+}
+
+@-webkit-keyframes spin {
+  to {
+    border-top-color: #ec407a;
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  to {
+    border-top-color: #ec407a;
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
